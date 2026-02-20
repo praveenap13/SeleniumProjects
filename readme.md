@@ -16,6 +16,7 @@ https://github.com/praveenap13/CucumberTestNGFramework.git
 - Maven
 - Extent Reports
 - Jenkins (CI/CD)
+- ngrok
 
 ---
 
