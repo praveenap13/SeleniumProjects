@@ -82,8 +82,7 @@ Extent HTML report is generated at:
 extent-reports/ExtentReport.html
 Allure Report-target/allure-results
 In Jenkins:
-- Report is published automatically
-
+Report is published automatically
 
 ---
 
@@ -94,7 +93,7 @@ The framework resolves browser in the following order:
 Jenkins Parameter  
 Maven `-Dbrowser`  
 ️testng.xml parameter  
-️ config.properties  
+️config.properties  
 Default = chrome
 
 ---
