@@ -34,14 +34,19 @@ Configurable Browser & Environment
 
 
 ## Project Structure
+src/main/java
+│
+├── driver →  DriverFactory -> DriverManager
+├── pages → Page Object classes
+├──utility → ConfigReader /ElementActions/LoggerUtil/waitUtility/RetryListener
+
 src/test/java
 │
 ├── runners → TestNG Runner
-├── factory → DriverFactory (ThreadLocal)
-├── hooks → Cucumber Hooks
-├── stepdefinitions → Step Definition files
-├── pages → Page Object classes
-└── utils → Config Reader / Utilities
+├── context ->PageManager/TestContext
+├── stepdefinitions → Step Definition files/Hooks
+├── resources->features/config/extent/allure properties /testng,spark-config,log4j2 xml
+└
 Run specific browser:
 
 ---
@@ -54,15 +59,10 @@ Right-click on `TestRunner.java` → Run as TestNG Test
 ---
 
 ### Run from Maven
-
-Run default browser (from config file):
-mvn clean test
-
-mvn clean test -Dbrowser=chrome
-mvn clean test -Dbrowser=edge
+mvn clean test -DsuiteXmlFile=src/test/resources/testng.xml -Dbrowser=edge
 
 ###  Run Cross Browser (TestNG XML)
-###  Run Cross Browser (TestNG XML)
+
 
 ##  Jenkins Execution
 
@@ -75,12 +75,13 @@ The pipeline supports parameterized browser execution.
 Pipeline passes parameter as:
 
 -Dbrowser=${BROWSER}
+# Reports
 Extent HTML report is generated at:
-Extent HTML report is generated at:
-target/extent-reports/ExtentReport.html
+extent-reports/ExtentReport.html
+Allure Report-target/allure-results
 In Jenkins:
 - Report is published automatically
-- Report is attached in email notification
+
 
 ---
 
@@ -90,7 +91,7 @@ The framework resolves browser in the following order:
 
 Jenkins Parameter  
 Maven `-Dbrowser`  
-️  testng.xml parameter  
+️testng.xml parameter  
 ️ config.properties  
 Default = chrome
 
@@ -119,7 +120,8 @@ HTML Report Publishing
 Parameterized Execution
 
 ---
-
+Selenium Grid Integration
+Headless Mode Support
 ##  Author
 
 Praveena
@@ -128,9 +130,7 @@ Praveena
 
 ## Future Enhancements
 
-- Selenium Grid Integration
 - Docker Execution
-- Headless Mode Support
 - Slack Notification Integration
 - Environment Switching (QA/UAT/PROD)
 
