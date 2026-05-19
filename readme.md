@@ -15,7 +15,9 @@ https://github.com/praveenap13/CucumberTestNGBrowser.git
 - TestNG
 - Maven
 - Extent Reports
+- Allure Report
 - Jenkins (CI/CD)
+- Selenium Grid
 - ngrok
 
 ---
