@@ -4,7 +4,7 @@
 ## Overview
 This is a Rest Assured Automation Framework built using Selenium and TestNG.  
 Jenkins integration, and Extent HTML reporting.
-https://github.com/praveenap13/CucumberTestNGBrowser.git
+https://github.com/praveenap13/RestAssuredLion.git
 ---
 
 ##  Tech Stack
